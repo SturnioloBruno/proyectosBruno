@@ -7,3 +7,5 @@ El ejercicio correspondiente al proyecto 2 se encuentra en la carpeta test.
 ¡Disfruta el ejercicio de TDD! 
 
 Iteracion 1: Se comienza con el testeo, al no existir todavía el método, falla por error de compilación.
+
+Iteracion 2: Se busca lograr que el caso al menos compile, para lo cual se programa el método que se desea probar con el objetivo de que simplemente pase la compilación, no necesariamente de que resuelva bien la necesidad de negocio.
