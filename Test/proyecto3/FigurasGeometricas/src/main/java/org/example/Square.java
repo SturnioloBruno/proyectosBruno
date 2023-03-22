@@ -16,7 +16,9 @@ public class Square implements FiguraGeometrica {
     }
 
     @Override
-    public double calcularArea() {
+    public double calcularArea(){
+        if (side < 0)
+            throw new IllegalArgumentException("El lado no puede ser negativo");
         return side * side;
     }
 }
