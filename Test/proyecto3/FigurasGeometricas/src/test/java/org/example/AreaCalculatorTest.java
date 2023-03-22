@@ -10,36 +10,36 @@ class AreaCalculatorTest {
     @Test
     @DisplayName("Calcular el área de un círculo con radio 3")
     public void testCalculateCircleAreaWithRadiusThree() {
-        double radius = 3;
+        Circle circle = new Circle(3);
         double expectedArea = 29.6088132;
-        double actualArea = AreaCalculator.calculateCircleArea(radius);
+        double actualArea = AreaCalculator.calculateCircleArea(circle);
         Assertions.assertEquals(expectedArea, actualArea);
     }
 
     @Test
     @DisplayName("Calcular el área de un cuadrado con lado 4")
     public void testCalculateSquareAreaWithSideFour() {
-        double side = 4;
+        Square square = new Square(4);
         double expectedArea = 16;
-        double actualArea = AreaCalculator.calculateSquareArea(side);
+        double actualArea = AreaCalculator.calculateSquareArea(square);
         Assertions.assertEquals(expectedArea, actualArea);
     }
 
     @Test
     @DisplayName("Intentar calcular el área de un círculo con radio 0")
     public void testCalculateCircleAreaWithRadiusZero() {
-        double radius = 0;
+        Circle circle = new Circle(0);
         double expectedArea = 0;
-        double actualArea = AreaCalculator.calculateCircleArea(radius);
+        double actualArea = AreaCalculator.calculateCircleArea(circle);
         Assertions.assertEquals(expectedArea, actualArea);
     }
 
     @Test
     @DisplayName("Intentar calcular el área de un cuadrado con lado negativo")
     public void testCalculateSquareAreaWithNegativeSide() {
-        double side = -4;
+        Square square = new Square(-4);
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            AreaCalculator.calculateSquareArea(side);
+            AreaCalculator.calculateSquareArea(square);
         });
     }
 }

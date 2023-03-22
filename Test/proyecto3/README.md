@@ -14,4 +14,9 @@ Para este programa, se pueden definir los siguientes casos de prueba:
 - **Caso de prueba 2**: Calcular el área de un cuadrado con lado 4.
 - **Caso de prueba 3**: Intentar calcular el área de un círculo con radio 0.
 - **Caso de prueba 4**: Intentar calcular el área de un cuadrado con lado negativo.
+
 Luego, se puede proceder a escribir el código para el programa en sí, utilizando la metodología de TDD.
+
+- **Iteracion 1**: Se construyeron los casos de prueba tal cual acorde a los casos de prueba.
+- **Iteracion 2**: Se modificó el código para que compile, y un poco los casos de prueba para hacerlos más general.
+- **Iteracion 3**: 

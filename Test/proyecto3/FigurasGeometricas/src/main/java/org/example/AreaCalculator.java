@@ -1,11 +1,11 @@
 package org.example;
 
 public class AreaCalculator {
-    public static double calculateCircleArea(double radius) {
-        return 0;
+    public static double calculateCircleArea(Circle circle) {
+        return circle.getRadius();
     }
 
-    public static double calculateSquareArea(double side) {
-        return 0;
+    public static double calculateSquareArea(Square square) {
+        return square.getSide();
     }
 }
