@@ -11,3 +11,5 @@ Iteracion 1: Se comienza con el testeo, al no existir todavía el método, falla
 Iteracion 2: Se busca lograr que el caso al menos compile, para lo cual se programa el método que se desea probar con el objetivo de que simplemente pase la compilación, no necesariamente de que resuelva bien la necesidad de negocio.
 
 Iteracion 3: Hacemos lo estrictamente necesario para que el caso pase correctamente el test. En este caso, como siempre devuelve 1, el test pasará correctamente.
+
+Iteracion 4: En nuestro ejemplo, nos damos cuenta de que usando un tipo de dato booleano podemos ser más eficientes, por lo que hacemos las modificaciones necesarias para implementar esta mejora.

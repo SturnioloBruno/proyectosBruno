@@ -1,7 +1,7 @@
 package org.example;
 
 public class Validador {
-    public static int esPar(int numero) {
-        return 1;
+    public static boolean esPar(int numero) {
+        return true;
     }
 }

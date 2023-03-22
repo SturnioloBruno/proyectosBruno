@@ -11,8 +11,8 @@ class ValidadorTest {
         //Dado
         int numero = 4;
         //Cuando
-        int resultado = Validador.esPar(numero);
+        boolean resultado = Validador.esPar(numero);
         //Entonces
-        Assert.assertTrue(resultado == 1);
+        Assert.assertTrue(resultado);
     }
 }
