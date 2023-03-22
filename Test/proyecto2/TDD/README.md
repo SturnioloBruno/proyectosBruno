@@ -5,3 +5,5 @@ Cada commit representa un paso en el proceso de desarrollo utilizando TDD.
 El ejercicio correspondiente al proyecto 2 se encuentra en la carpeta test.
 
 ¡Disfruta el ejercicio de TDD! 
+
+Iteracion 1: Se comienza con el testeo, al no existir todavía el método, falla por error de compilación.
