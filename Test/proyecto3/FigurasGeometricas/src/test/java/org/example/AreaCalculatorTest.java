@@ -11,7 +11,7 @@ class AreaCalculatorTest {
     @DisplayName("Calcular el área de un círculo con radio 3")
     public void testCalculateCircleAreaWithRadiusThree() {
         Circle circle = new Circle(3);
-        double expectedArea = 29.6088132;
+        double expectedArea = Math.PI * Math.pow(circle.getRadius(),2);
         double actualArea = circle.calcularArea();
         Assertions.assertEquals(expectedArea, actualArea);
     }

@@ -20,3 +20,5 @@ Luego, se puede proceder a escribir el código para el programa en sí, utilizan
 - **Iteracion 1**: Se construyeron los casos de prueba tal cual acorde a los casos de prueba.
 - **Iteracion 2**: Se modificó el código para que compile, y un poco los casos de prueba para hacerlos más general.
 - **Iteracion 3**: Luego de un analisis de relaciones, se ve que la entidad AreaCalculator no pertenece al dominio, y se reemplaza por la interfaz FiguraGeometrica, con sus relaciones.
+- **Iteracion 4**: Con un diseño mas acorde, y las responsabilidades por cada entidad mejor definidas, se empieza a refactorizar el codigo, para cumplir con los casos de prueba.
+- **Iteracion 5**:  

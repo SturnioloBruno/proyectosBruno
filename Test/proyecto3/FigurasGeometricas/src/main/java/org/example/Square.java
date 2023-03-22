@@ -17,6 +17,6 @@ public class Square implements FiguraGeometrica {
 
     @Override
     public double calcularArea() {
-        return 0;
+        return side * side;
     }
 }

@@ -17,6 +17,6 @@ public class Circle implements FiguraGeometrica{
 
     @Override
     public double calcularArea() {
-        return 0;
+        return Math.PI * Math.pow(radius,2);
     }
 }
