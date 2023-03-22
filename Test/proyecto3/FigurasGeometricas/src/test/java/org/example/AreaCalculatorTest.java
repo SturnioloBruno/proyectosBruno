@@ -12,7 +12,7 @@ class AreaCalculatorTest {
     public void testCalculateCircleAreaWithRadiusThree() {
         Circle circle = new Circle(3);
         double expectedArea = 29.6088132;
-        double actualArea = AreaCalculator.calculateCircleArea(circle);
+        double actualArea = circle.calcularArea();
         Assertions.assertEquals(expectedArea, actualArea);
     }
 
@@ -21,7 +21,7 @@ class AreaCalculatorTest {
     public void testCalculateSquareAreaWithSideFour() {
         Square square = new Square(4);
         double expectedArea = 16;
-        double actualArea = AreaCalculator.calculateSquareArea(square);
+        double actualArea = square.calcularArea();
         Assertions.assertEquals(expectedArea, actualArea);
     }
 
@@ -30,7 +30,7 @@ class AreaCalculatorTest {
     public void testCalculateCircleAreaWithRadiusZero() {
         Circle circle = new Circle(0);
         double expectedArea = 0;
-        double actualArea = AreaCalculator.calculateCircleArea(circle);
+        double actualArea = circle.calcularArea();
         Assertions.assertEquals(expectedArea, actualArea);
     }
 
@@ -39,7 +39,7 @@ class AreaCalculatorTest {
     public void testCalculateSquareAreaWithNegativeSide() {
         Square square = new Square(-4);
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            AreaCalculator.calculateSquareArea(square);
+            square.calcularArea();
         });
     }
 }

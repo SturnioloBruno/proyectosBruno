@@ -1,6 +1,6 @@
 package org.example;
 
-public class Square {
+public class Square implements FiguraGeometrica {
     private double side;
 
     public Square(double side) {
@@ -13,5 +13,10 @@ public class Square {
 
     public void setSide(double side) {
         this.side = side;
+    }
+
+    @Override
+    public double calcularArea() {
+        return 0;
     }
 }
