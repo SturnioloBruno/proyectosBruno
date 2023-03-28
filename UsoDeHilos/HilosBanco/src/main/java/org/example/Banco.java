@@ -1,7 +1,11 @@
 package org.example;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Banco {
     private final double[] cuentas;
+    private Lock cierreBanco = new ReentrantLock();
 
     public Banco() {
         this.cuentas = new double[100];
@@ -12,14 +16,20 @@ public class Banco {
     }
 
     public void transferencia (int cuentaOrigen, int cuentaDestino, double cantidad) {
-        if (cuentas[cuentaOrigen] < cantidad) {
-            return;
+        cierreBanco.lock();
+        try {
+            if (cuentas[cuentaOrigen] < cantidad) {
+                return;
+            }
+            System.out.println(Thread.currentThread());
+            cuentas[cuentaOrigen] -= cantidad;
+            System.out.printf( "%10.2f de %d para %d" , cantidad, cuentaOrigen, cuentaDestino);
+            cuentas[cuentaDestino] += cantidad;
+            System.out.printf(" Saldo total: %10.2f%n", getSaldoTotal());
+        }finally {
+            cierreBanco.unlock();
         }
-        System.out.println(Thread.currentThread());
-        cuentas[cuentaOrigen] -= cantidad;
-        System.out.printf( "%10.2f de %d para %d" , cantidad, cuentaOrigen, cuentaDestino);
-        cuentas[cuentaDestino] += cantidad;
-        System.out.printf(" Saldo total: %10.2f%n", getSaldoTotal());
+
     }
 
     public double getSaldoTotal() {
