@@ -11,6 +11,9 @@ public class Paciente {
     private LocalDate fechaIngreso;
     private Domicilio domicilio;
 
+    public Paciente() {
+    }
+
     public Paciente(int id, String apellido, String nombre, String email, int dni, LocalDate fechaIngreso, Domicilio domicilio) {
         this.id = id;
         this.apellido = apellido;
@@ -56,5 +59,9 @@ public class Paciente {
 
     public Domicilio getDomicilio() {
         return domicilio;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
