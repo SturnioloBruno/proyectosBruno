@@ -1,0 +1,1 @@
+//aca iria la logica del front, los fecth y esas cosas para consumir la api y mostrarla
