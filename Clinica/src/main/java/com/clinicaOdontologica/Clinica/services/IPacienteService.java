@@ -9,4 +9,6 @@ public interface IPacienteService {
     Paciente buscarXEmail(String email);
     Paciente guardar(Paciente paciente);
     Paciente actualizar(Paciente paciente);
+    Paciente buscar(Integer id);
+    void eliminar(Integer id);
 }

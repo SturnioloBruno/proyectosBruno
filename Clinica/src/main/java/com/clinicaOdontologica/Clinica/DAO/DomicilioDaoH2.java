@@ -77,7 +77,47 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
     @Override
     public Domicilio actualizar(Domicilio elemento) {
-        return null;
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE domicilios SET calle=?, numero=?, localidad=?, provincia=? WHERE id=?");
+            preparedStatement.setString(1,elemento.getCalle());
+            preparedStatement.setInt(2,elemento.getNumero());
+            preparedStatement.setString(3,elemento.getLocalidad());
+            preparedStatement.setString(4,elemento.getProvincia());
+            preparedStatement.setInt(5,elemento.getId());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return elemento;
+    }
+
+    @Override
+    public void eliminar(int id) {
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM domicilios WHERE id=?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
