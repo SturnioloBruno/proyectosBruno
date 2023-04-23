@@ -1,11 +1,13 @@
 package com.clinicaOdontologica.Clinica.DAO;
 
 import com.clinicaOdontologica.Clinica.dominio.Odontologo;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class OdontologoDaoH2 implements IDao<Odontologo> {
 
     private static Connection getConnection() throws Exception {

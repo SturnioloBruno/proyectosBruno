@@ -2,11 +2,12 @@ package com.clinicaOdontologica.Clinica.DAO;
 
 import com.clinicaOdontologica.Clinica.dominio.Domicilio;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.List;
 
-@Component
+@Repository
 public class DomicilioDaoH2 implements IDao<Domicilio> {
     private static Connection getConnection() throws Exception {
         Class.forName("org.h2.Driver").newInstance();

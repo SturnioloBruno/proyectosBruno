@@ -3,11 +3,13 @@ package com.clinicaOdontologica.Clinica.DAO;
 import com.clinicaOdontologica.Clinica.dominio.Odontologo;
 import com.clinicaOdontologica.Clinica.dominio.Paciente;
 import com.clinicaOdontologica.Clinica.dominio.Turno;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class TurnoLista implements IDao<Turno> {
     private List<Turno> turnos;
 

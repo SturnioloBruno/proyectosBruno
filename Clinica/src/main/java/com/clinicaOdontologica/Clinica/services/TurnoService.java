@@ -2,9 +2,11 @@ package com.clinicaOdontologica.Clinica.services;
 
 import com.clinicaOdontologica.Clinica.DAO.IDao;
 import com.clinicaOdontologica.Clinica.dominio.Turno;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TurnoService {
     private IDao<Turno> turnoIDao;
 

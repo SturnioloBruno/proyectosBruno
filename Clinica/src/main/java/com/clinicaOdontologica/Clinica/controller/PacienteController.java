@@ -12,12 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/pacientes")
 public class PacienteController {
-    private final IPacienteService pacienteService;
-
     @Autowired
-    public PacienteController(IPacienteService pacienteService) {
-        this.pacienteService = pacienteService;
-    }
+    private IPacienteService pacienteService;
+
+//    public PacienteController(IPacienteService pacienteService) {
+//        this.pacienteService = pacienteService;
+//    }
 
     @GetMapping("/index")
     public String traerPaciente(Model model, @RequestParam("email") String email) {
