@@ -16,4 +16,8 @@ public class OdontologoService {
     public List<Odontologo> buscarTodos() {
         return odontologoIDao.listarElementos();
     }
+
+    public Odontologo buscar(int id) {
+        return odontologoIDao.buscarId(id);
+    }
 }
