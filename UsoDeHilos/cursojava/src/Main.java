@@ -7,46 +7,30 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        // Download webs
-        List<String> links = new ArrayList<>();
-        links.add("https://www.bbc.com");
-        links.add("https://www.bbc.com/news/uk-611196071");
-        links.add("https://www.bbc.com/news/world-africa-65374093");
-        links.add("https://www.bbc.com/news/world-us-canada-65379340");
-        links.add("https://www.bbc.com/news/world-middle-east-65374749");
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
 
-        links.stream().parallel().forEach(link -> getWebContent(link));
+        Thread first = new Thread(counter,"First");
+        Thread second = new Thread(counter,"Second");
 
 
-
-        String result = getWebContent(links.get(0));
-
-        System.out.println(result);
+        first.start();
+        second.start();
+        Thread.sleep(5_000);
+        System.out.println(counter.count);
     }
 
-    private synchronized static String getWebContent(String link){
-        System.out.println("INIT");
-        System.out.println(link);
-        try {
-            URL url = new URL(link);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            String encoding = conn.getContentEncoding();
-
-            InputStream input = conn.getInputStream();
-            System.out.println("END");
-            return new BufferedReader(new InputStreamReader(input))
-                    .lines().collect(Collectors.joining());
-        } catch (MalformedURLException e) {
-            System.out.println(e.getMessage());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+    static class Counter extends Thread{
+        public AtomicInteger count = new AtomicInteger(0);
+        public void run() {
+            for (int i = 0; i < 100_000_000; i++) {
+                count.addAndGet(1);
+            }
         }
-
-        return "";
     }
 }
