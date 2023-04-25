@@ -7,30 +7,42 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Counter counter = new Counter();
+        List<String> countries = new ArrayList<>();
+        countries.add("United States");
+        countries.add("Argentina");
+        countries.add("Spain");
+        countries.add("Italy");
 
-        Thread first = new Thread(counter,"First");
-        Thread second = new Thread(counter,"Second");
+        Optional<String> country = countries.stream().filter(c -> c.startsWith("Arg")).findFirst();
 
-
-        first.start();
-        second.start();
-        Thread.sleep(5_000);
-        System.out.println(counter.count);
+        country.ifPresent(System.out::println);
     }
 
-    static class Counter extends Thread{
-        public AtomicInteger count = new AtomicInteger(0);
-        public void run() {
-            for (int i = 0; i < 100_000_000; i++) {
-                count.addAndGet(1);
-            }
+    public static void exampleOptional() {
+        Optional<Double> result = averageScores(7.0,8.0,4.0,10.0);
+        if (result.isPresent()) {
+            System.out.println(result.get());
+        }else {
+            System.out.println("Nothing");
         }
+    }
+
+    public static Optional<Double> averageScores(Double ...scores) {
+        if (scores.length == 0) {
+            return Optional.empty();
+        }
+        double sum = 0;
+        for (Double score :
+                scores) {
+            sum+=score;
+        }
+        return Optional.of(sum/scores.length);
     }
 }
