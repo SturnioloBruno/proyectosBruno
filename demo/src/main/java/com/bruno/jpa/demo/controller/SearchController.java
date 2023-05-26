@@ -1,6 +1,5 @@
-package com.cursojava.curso.controllers;
-
-import com.cursojava.curso.entities.WebPage;
+package com.bruno.jpa.demo.controller;
+import com.bruno.jpa.demo.entities.WebPage;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +16,7 @@ public class SearchController {
         WebPage page = new WebPage();
         page.setTitle("test");
         page.setDescription("test");
+        result.add(page);
         return result;
     }
 }

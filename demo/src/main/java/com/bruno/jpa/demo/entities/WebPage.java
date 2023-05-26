@@ -1,4 +1,4 @@
-package com.cursojava.curso.entities;
+package com.bruno.jpa.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
